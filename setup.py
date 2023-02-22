@@ -1,31 +1,38 @@
+import glob
+import frameworks
 from setuptools import setup, find_packages
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-with open("requirements.txt", "r", encoding="utf-8") as fh:
-    requirements = fh.read()
+def get_scripts_bin():
+    return glob.glob("cli/*")
+
+def get_package_description():
+    with open("README.md", "r") as stream:
+        readme = stream.read()
+    with open("HISTORY.md", "r") as stream:
+        history = stream.read()
+    return f"{readme}\n\n{history}"
+
+def get_requirements():
+    with open('requirements.txt') as f:
+        requirements = f.read().splitlines()
+    return requirements
 
 setup(
-    name = 'ranpass',
-    version = '0.0.4',
-    author = 'Anish Krishnaswamy',
-    author_email = 'kanish671@gmail.com',
-    license = 'MIT',
-    description = 'random password generator',
-    long_description = long_description,
-    long_description_content_type = "text/markdown",
-    url = 'https://github.com/kanish671/ranpass',
-    py_modules = ['pastelaria', 'app'],
-    packages = find_packages(),
-    install_requires = [requirements],
-    python_requires='>=3.7',
+    name="pastelaria",
+    version=frameworks.__version__,
+    author = 'Thais Ribeiro',
+    author_email = 'thaisribeirodn@gmail.com',
+    description = 'CLI for generating API boilerplates',
+    long_description=get_package_description(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/thaisribeiro/pastelaria",
+    packages=find_packages(),
+    install_requires=get_requirements(),
     classifiers=[
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    entry_points = '''
-        [console_scripts]
-        ranpass=ranpass:cli
-    '''
+    scripts=get_scripts_bin(),
+    python_requires=">=3.10",
 )
