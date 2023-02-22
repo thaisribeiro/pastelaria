@@ -8,7 +8,7 @@ tags/
 
 build
 dist
-
+*.egg-info
 # Logs
 logs
 *.log

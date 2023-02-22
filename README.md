@@ -1,13 +1,5 @@
-# 🌮 PASTELARIA
-
-![pastelaria](https://raw.githubusercontent.com/thaisribeiro/pastelaria/main/pastelaria.png)
-
-This repository is a cli that automatically creates api boilerplates for some python frameworks
-
-_Made with love by [Thais](https://github.com/thaisribeiro). - CX software engineer at Luizalabs (Magalu)_
-
-# Prerequisites
-This repository assumes that Python 3.10 or newer is used.
+#### 🤖 Este readme foi gerado pela Pastelaria
+This is a boilerplate using the fastAPI framework
 
 # Installation
 
@@ -28,3 +20,14 @@ Use `pip` to download project dependencies:
 ```shell
 pip install -r requirements.txt
 ```
+# Settings
+
+Configure environments in `.env`
+
+# Execution
+ Run
+```shell
+uvicorn main:app --reload
+```
+# Routes 
+url: http://localhost:8000/docs
