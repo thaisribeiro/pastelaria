@@ -1,4 +1,4 @@
-1.0.0rc1
+0.0.1
 --------
 
 * Adding script boilerplate FastAPI
