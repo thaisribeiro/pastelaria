@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
 
-setup(name="pastelaria-1",
+setup(name="pastelaria",
     version=frameworks.__version__,
     author='Thais Ribeiro',
     author_email='thaisribeirodn@gmail.com',
