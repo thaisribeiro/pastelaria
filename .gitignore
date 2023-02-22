@@ -6,6 +6,9 @@ tags/
 
 ### WEB STUFF
 
+build
+dist
+
 # Logs
 logs
 *.log
